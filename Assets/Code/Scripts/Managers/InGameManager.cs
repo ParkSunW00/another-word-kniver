@@ -1,9 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
+
 public class InGameManager : MonoBehaviour
 {
+	const int START_DELAY_SECONDS = 3;
+	const int DAMAGE_PER_SECONDS = 2;
+
 	[SerializeField] ComboManager m_comboManager;
+	[SerializeField] HealthManager m_healthManager;
 	[SerializeField] TargetManager m_targetManager;
 	[SerializeField] TimeLimitManager m_timeLimitManager;
 	[SerializeField] ScoreManager m_scoreManager;
@@ -44,9 +49,10 @@ public class InGameManager : MonoBehaviour
 		m_timeLimitManager.ResetTimeLimit();
 	}
 
-	IEnumerator TargetSpawnWIthDelay(int seconds = 3)
+	IEnumerator TargetSpawnWIthDelay()
 	{
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(START_DELAY_SECONDS);
+		m_healthManager.m_healthDamagePerSeconds = DAMAGE_PER_SECONDS;
 		m_targetManager.Spawn();
 		m_timeLimitManager.ResetTimeLimit();
 	}
