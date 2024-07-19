@@ -10,7 +10,15 @@ public class MainMenuManager : MonoBehaviour
     //¹öÆ°
     public Button StartBtn;
     public Button OptionBtn;
+    public Button BestRecBtn;
+    public Button SkillBtn;
+
+    //OptionPanelObject
+    public GameObject OptionPanel;
+
+    public Button SoundOptionBtn;
     public Button ExitBtn;
+
 
     TitleManager Titlemng;
 
@@ -21,6 +29,12 @@ public class MainMenuManager : MonoBehaviour
             StartBtn.onClick.AddListener(StartBtnClick);
         }
 
+        if (SkillBtn != null)
+        {
+            SkillBtn.onClick.AddListener(SkillBtnClick);
+        }
+
+
         if (OptionBtn != null)
         {
             OptionBtn.onClick.AddListener(OptionBtnClick);
@@ -30,31 +44,51 @@ public class MainMenuManager : MonoBehaviour
         {
             ExitBtn.onClick.AddListener(ExitBtnClick);
         }
+
+        if (SoundOptionBtn != null)
+        {
+            SoundOptionBtn.onClick.AddListener(SoundOptionBtnClick);
+        }
     }//--void Start()
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
+        {
+            StartBtnClick();
+        }
 
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        {
+            SkillBtnClick();
+        }
     }
+
 
     private void StartBtnClick()
     {
-
-        Debug.Log("Click");
         SceneManager.LoadScene("InGame");
     }
 
     private void OptionBtnClick()
     {
-        Debug.Log("Click");
-        SceneManager.LoadScene("InOption");
+        OptionPanel.SetActive(true);
+    }
+
+    private void SkillBtnClick()
+    {
+        SceneManager.LoadScene("InGame");
     }
 
     private void ExitBtnClick()
     {
-        Debug.Log("click");
+        Titlemng.isStarted = false;
         ExitGame();
+    }
+
+    private void SoundOptionBtnClick()
+    {
+        SceneManager.LoadScene("Option");
     }
 
     public void ExitGame()
