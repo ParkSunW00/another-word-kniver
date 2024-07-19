@@ -5,11 +5,18 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource music;
+    private static AudioManager instance = null;
 
-
-    public void setMusicVolume(float volume)
+    void Awake()
     {
-        music.volume = volume;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
