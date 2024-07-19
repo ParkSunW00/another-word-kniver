@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class InGameManager : MonoBehaviour
 {
-	const int START_DELAY_SECONDS = 3;
+	const int BASE_TIME_LIMIT = 2;
 	const int DAMAGE_PER_SECONDS = 2;
+	const int START_DELAY_SECONDS = 3;
 
 	[SerializeField] ComboManager m_comboManager;
 	[SerializeField] HealthManager m_healthManager;
@@ -39,7 +40,7 @@ public class InGameManager : MonoBehaviour
 		}
 
 		m_targetManager.Spawn();
-		m_timeLimitManager.ResetTimeLimit();
+		ResetLimitTime();
 	}
 	private void AddComboAndHealHealth()
 	{
@@ -51,12 +52,17 @@ public class InGameManager : MonoBehaviour
 		m_comboManager.ResetCombo();
 		m_healthManager.AddHealth(-10);
 	}
+	private void ResetLimitTime()
+	{
+		float reduceLimit = Mathf.Floor(m_comboManager.Combo / 10) * 0.1f;
+		m_timeLimitManager.ResetTimeLimit(BASE_TIME_LIMIT - reduceLimit);
+	}
 	private void HandleTimeLimitEnd()
 	{
 		m_comboManager.ResetCombo();
 		m_targetManager.Destory();
 		m_targetManager.Spawn();
-		m_timeLimitManager.ResetTimeLimit();
+		ResetLimitTime();
 	}
 
 	IEnumerator TargetSpawnWIthDelay()
@@ -64,6 +70,6 @@ public class InGameManager : MonoBehaviour
 		yield return new WaitForSeconds(START_DELAY_SECONDS);
 		m_healthManager.m_healthDamagePerSeconds = DAMAGE_PER_SECONDS;
 		m_targetManager.Spawn();
-		m_timeLimitManager.ResetTimeLimit();
+		m_timeLimitManager.ResetTimeLimit(BASE_TIME_LIMIT);
 	}
 }

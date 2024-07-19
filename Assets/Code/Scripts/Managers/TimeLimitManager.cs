@@ -25,7 +25,7 @@ public class TimeLimitManager : MonoBehaviour
 		m_timeLimitChangedEvent.Invoke(m_timeLimit);
 		if (m_timeLimit <= 0) m_timeLimitEndedEvent.Invoke();
 	}
-	public void ResetTimeLimit(float value = 2)
+	public void ResetTimeLimit(float value)
 	{
 		m_timeLimit = value;
 		m_timeLimitResetedEvent.Invoke(m_timeLimit);
