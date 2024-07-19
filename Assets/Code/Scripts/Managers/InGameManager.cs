@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class InGameManager : MonoBehaviour
@@ -67,6 +68,7 @@ public class InGameManager : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("bestScore", m_scoreManager.Score);
 		}
+		SceneManager.LoadScene("Rank");
 	}
 	private void HandleTimeLimitEnd()
 	{
