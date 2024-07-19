@@ -375,9 +375,9 @@ MonoBehaviour:
   m_targetPrefabs:
   - {fileID: 8490121238123854312, guid: f71cceca51fd02142bfd3f800f3e07cc, type: 3}
   - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
-  m_rightSpawnPosition: {x: 1, y: 0}
+  m_rightSpawnPosition: {x: 3, y: 0}
   m_middleSpawnPosition: {x: 0, y: 0}
-  m_leftSpawnPosition: {x: -1, y: 0}
+  m_leftSpawnPosition: {x: -3, y: 0}
 --- !u!114 &429544627
 MonoBehaviour:
   m_ObjectHideFlags: 0
