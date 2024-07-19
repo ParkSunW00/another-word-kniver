@@ -10,7 +10,9 @@ public class HealthManager : MonoBehaviour
 	[SerializeField] Slider m_slider;
 
 	static UnityEvent<int> m_healthChangedEvent;
+	static UnityEvent m_healthDeathEvent;
 	public static UnityEvent<int> HealthChangedEvent { get { return m_healthChangedEvent; } }
+	public static UnityEvent HealthDeathEvent { get { return m_healthDeathEvent; } }
 
 	private int m_health = 120;
 
@@ -19,6 +21,7 @@ public class HealthManager : MonoBehaviour
 	private void Awake()
 	{
 		m_healthChangedEvent = new UnityEvent<int>();
+		m_healthDeathEvent = new UnityEvent();
 	}
 	private void Start()
 	{

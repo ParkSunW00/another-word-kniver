@@ -19,6 +19,7 @@ public class InGameManager : MonoBehaviour
 
 	private void Start()
 	{
+		HealthManager.HealthDeathEvent.AddListener(HandleDeath);
 		TimeLimitManager.TimeLimitEndedEvent.AddListener(ResetComboAndDamageHealth);
 		TimeLimitManager.TimeLimitEndedEvent.AddListener(HandleTimeLimitEnd);
 		StartCoroutine(TargetSpawnWIthDelay());
@@ -59,6 +60,13 @@ public class InGameManager : MonoBehaviour
 	{
 		float reduceLimit = Mathf.Floor(m_comboManager.Combo / REDUCE_LIMIT_TIME_COUNT) * REDUCE_LIMIT_TIME_SECONDS;
 		m_timeLimitManager.ResetTimeLimit(BASE_TIME_LIMIT - reduceLimit);
+	}
+	private void HandleDeath()
+	{
+		if (!PlayerPrefs.HasKey("bestScore") || PlayerPrefs.GetInt("bestScore") < m_scoreManager.Score)
+		{
+			PlayerPrefs.SetInt("bestScore", m_scoreManager.Score);
+		}
 	}
 	private void HandleTimeLimitEnd()
 	{
