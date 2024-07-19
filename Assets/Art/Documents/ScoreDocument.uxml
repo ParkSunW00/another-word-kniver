@@ -1,5 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="ScoreContainer" style="flex-grow: 1; position: absolute; top: 4%; left: 4%;">
         <ui:VisualElement name="ScoreBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprites/Play_Score_Background.png?fileID=2800000&amp;guid=1eee37df375528e4d8b8df11a22d9066&amp;type=3#Play_Score_Background&quot;); width: 332px; max-width: 332px; min-width: 332px; min-height: 122px; max-height: 122px; height: 122px;" />
+        <ui:VisualElement name="NumberWrapperElement" style="flex-grow: 1; align-self: center; position: absolute; top: auto; flex-wrap: nowrap; flex-direction: row; width: 100%; height: 100%; align-items: center; justify-content: flex-end; padding-left: 0; padding-right: 32px;">
+            <ui:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprites/Num_0.png?fileID=2800000&amp;guid=e7cd99c433bab974f908fd3bd6aafa6f&amp;type=3#Num_0&quot;); width: 52px; max-width: 52px; min-width: 52px; min-height: 76px; max-height: 76px; height: 76px; position: relative; margin-right: -12px;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
