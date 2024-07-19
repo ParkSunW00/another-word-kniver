@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement style="flex-grow: 1; position: relative; flex-direction: column-reverse;">
-        <ui:Label tabindex="-1" text="Score: 0" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ScoreLabel" />
+    <ui:VisualElement name="ScoreContainer" style="flex-grow: 1; position: absolute; top: 4%; left: 4%;">
+        <ui:VisualElement name="ScoreBackground" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprites/Play_Score_Background.png?fileID=2800000&amp;guid=1eee37df375528e4d8b8df11a22d9066&amp;type=3#Play_Score_Background&quot;); width: 332px; max-width: 332px; min-width: 332px; min-height: 122px; max-height: 122px; height: 122px;" />
     </ui:VisualElement>
 </ui:UXML>
