@@ -19,8 +19,7 @@ public class MainMenuManager : MonoBehaviour
     public Button SoundOptionBtn;
     public Button ExitBtn;
 
-
-
+   
     TitleManager Titlemng;
 
     void Start()
@@ -64,6 +63,11 @@ public class MainMenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             SkillBtnClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OptionPanel.SetActive(false);
         }
     }
 
@@ -112,10 +116,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void TogglePanel()
     {
-        if (OptionPanel != null)
-        {
-            OptionPanel.SetActive(!OptionPanel.activeSelf);
-        }
+        OptionPanel.SetActive(true);
+        
     }
 
 }
