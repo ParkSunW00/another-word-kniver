@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InGameManager : MonoBehaviour
 {
+	[SerializeField] ComboManager m_comboManager;
 	[SerializeField] TargetManager m_targetManager;
 	[SerializeField] TimeLimitManager m_timeLimitManager;
 	[SerializeField] ScoreManager m_scoreManager;
@@ -17,14 +18,20 @@ public class InGameManager : MonoBehaviour
 		if (!m_targetManager.CheckCurrectKeyDown()) return;
 
 		GameObject hitedTargetGameObject = m_targetManager.Destory();
-		m_targetManager.Spawn();
-
+		Target hitedTarget = hitedTargetGameObject.GetComponent<Target>();
 		if (m_targetManager.CheckCorrectDirectionKeyDown())
 		{
-			Target hitedTarget = hitedTargetGameObject.GetComponent<Target>();
 			m_scoreManager.AddScore(hitedTarget.TargetData.Score);
-			m_timeLimitManager.ResetTimeLimit();
+			if (hitedTarget.TargetData.Score > 0) m_comboManager.AddCombo();
+			else m_comboManager.ResetCombo();
+		} else
+		{
+			if (hitedTarget.TargetData.Score <= 0) m_comboManager.AddCombo();
+			else m_comboManager.ResetCombo();
 		}
+
+		m_targetManager.Spawn();
+		m_timeLimitManager.ResetTimeLimit();
 	}
 
 	IEnumerator TargetSpawnWIthDelay(int seconds = 3)
