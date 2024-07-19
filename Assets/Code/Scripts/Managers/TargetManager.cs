@@ -14,6 +14,24 @@ public class TargetManager : MonoBehaviour
 	Direction m_targetDirection;
 	GameObject m_targetGameObject;
 
+	public bool CheckCorrectDirectionKeyDown()
+	{
+		if (Input.GetKeyDown(KeyCode.UpArrow) && m_targetDirection == Direction.MIDDLE) return true;
+		if (Input.GetKeyDown(KeyCode.RightArrow) && m_targetDirection == Direction.RIGHT) return true;
+		if (Input.GetKeyDown(KeyCode.LeftArrow) && m_targetDirection == Direction.LEFT) return true;
+		return false;
+	}
+	public bool CheckCurrectKeyDown()
+	{
+		if (Input.GetKeyDown(KeyCode.UpArrow)) return true;
+		if (Input.GetKeyDown(KeyCode.RightArrow)) return true;
+		if (Input.GetKeyDown(KeyCode.LeftArrow)) return true;
+		return false;
+	}
+	public bool CheckSpawned()
+	{
+		return m_targetGameObject;
+	}
 	public GameObject Destory()
 	{
 		Destroy(m_targetGameObject);
@@ -41,19 +59,5 @@ public class TargetManager : MonoBehaviour
 				break;
 		}
 		return m_targetGameObject;
-	}
-	public bool CheckCurrectKeyDown()
-	{
-		if (Input.GetKeyDown(KeyCode.UpArrow)) return true;
-		if (Input.GetKeyDown(KeyCode.RightArrow)) return true;
-		if (Input.GetKeyDown(KeyCode.LeftArrow)) return true;
-		return false;
-	}
-	public bool CheckCorrectDirectionKeyDown()
-	{
-		if (Input.GetKeyDown(KeyCode.UpArrow) && m_targetDirection == Direction.MIDDLE) return true;
-		if (Input.GetKeyDown(KeyCode.RightArrow) && m_targetDirection == Direction.RIGHT) return true;
-		if (Input.GetKeyDown(KeyCode.LeftArrow) && m_targetDirection == Direction.LEFT) return true;
-		return false;
 	}
 }

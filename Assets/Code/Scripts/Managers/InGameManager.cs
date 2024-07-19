@@ -13,6 +13,7 @@ public class InGameManager : MonoBehaviour
 	}
 	private void Update()
 	{
+		if (!m_targetManager.CheckSpawned()) return;
 		if (!m_targetManager.CheckCurrectKeyDown()) return;
 
 		GameObject hitedTargetGameObject = m_targetManager.Destory();
