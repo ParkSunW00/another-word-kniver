@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class HealthManager : MonoBehaviour
 {
+	const int HEALTH_MAX = 120;
+
 	static UnityEvent<int> m_healthChangedEvent;
 	public static UnityEvent<int> HealthChangedEvent { get { return m_healthChangedEvent; } }
 
@@ -19,7 +21,7 @@ public class HealthManager : MonoBehaviour
 	private void Update()
 	{
 		m_healthDamageDelay -= Time.deltaTime;
-		if(m_healthDamageDelay <= 0)
+		if (m_healthDamageDelay <= 0)
 		{
 			m_healthDamageDelay = 1;
 			AddHealth(-m_healthDamagePerSeconds);
@@ -28,6 +30,7 @@ public class HealthManager : MonoBehaviour
 	public void AddHealth(int value)
 	{
 		m_health += value;
+		if (m_health > HEALTH_MAX) m_health = HEALTH_MAX;
 		m_healthChangedEvent.Invoke(m_health);
 	}
 }

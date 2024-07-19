@@ -29,17 +29,27 @@ public class InGameManager : MonoBehaviour
 		if (m_targetManager.CheckCorrectDirectionKeyDown())
 		{
 			m_scoreManager.AddScore(target.TargetData.Score);
-			if (target.TargetData.Score > 0) m_comboManager.AddCombo();
-			else m_comboManager.ResetCombo();
+			if (target.TargetData.Score > 0) AddComboAndHealHealth();
+			else ResetComboAndDamageHealth();
 		}
 		else
 		{
-			if (target.TargetData.Score <= 0) m_comboManager.AddCombo();
-			else m_comboManager.ResetCombo();
+			if (target.TargetData.Score <= 0) AddComboAndHealHealth();
+			else ResetComboAndDamageHealth();
 		}
 
 		m_targetManager.Spawn();
 		m_timeLimitManager.ResetTimeLimit();
+	}
+	private void AddComboAndHealHealth()
+	{
+		m_comboManager.AddCombo();
+		m_healthManager.AddHealth(2);
+	}
+	private void ResetComboAndDamageHealth()
+	{
+		m_comboManager.ResetCombo();
+		m_healthManager.AddHealth(-10);
 	}
 	private void HandleTimeLimitEnd()
 	{
