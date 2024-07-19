@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class TimeLimitManager : MonoBehaviour
 {
+	[SerializeField] Slider m_slider;
+
 	static UnityEvent<float> m_timeLimitChangedEvent;
 	static UnityEvent<float> m_timeLimitResetedEvent;
 	static UnityEvent m_timeLimitEndedEvent;
@@ -17,6 +20,10 @@ public class TimeLimitManager : MonoBehaviour
 		m_timeLimitChangedEvent = new UnityEvent<float>();
 		m_timeLimitResetedEvent = new UnityEvent<float>();
 		m_timeLimitEndedEvent = new UnityEvent();
+	}
+	private void Start()
+	{
+		m_timeLimitChangedEvent.AddListener(timeLimit => { m_slider.value = timeLimit; });
 	}
 	private void FixedUpdate()
 	{
