@@ -1147,7 +1147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_documentNumber: {fileID: 1168554736}
-  m_uiDocument: {fileID: 1168554733}
 --- !u!114 &1168554736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112501503}
   - component: {fileID: 2112501502}
+  - component: {fileID: 2112501505}
   - component: {fileID: 2112501504}
   m_Layer: 5
   m_Name: ScoreDocument
@@ -1709,7 +1709,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c9c9802d92832449a6586de865678a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_documentNumber: {fileID: 2112501505}
+--- !u!114 &2112501505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112501501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2146f7548491746a01adbf2d7953f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_uiDocument: {fileID: 2112501502}
+  m_numberImages:
+  - {fileID: 2800000, guid: e7cd99c433bab974f908fd3bd6aafa6f, type: 3}
+  - {fileID: 2800000, guid: 0373fa5e3a8c7e3439ca0ef3a8dbd522, type: 3}
+  - {fileID: 2800000, guid: fe865c67a9076f44095a7b1d54feb4c8, type: 3}
+  - {fileID: 2800000, guid: a2bca0154b3557443895a772dfc7d63b, type: 3}
+  - {fileID: 2800000, guid: d6dad1c53fc038d469bee0995bf627fc, type: 3}
+  - {fileID: 2800000, guid: 3e791fbfa2799e240a85d401da61e465, type: 3}
+  - {fileID: 2800000, guid: fe5af9416d828bf45aea2ff349727b63, type: 3}
+  - {fileID: 2800000, guid: 2406d8b3dd2f65847a3ee1a9c7ff8c75, type: 3}
+  - {fileID: 2800000, guid: 0aeefc8437792de44a4ebb810bc59cdf, type: 3}
+  - {fileID: 2800000, guid: 98804d99118cea743a24aa362f8c3905, type: 3}
+  m_numberWrapperElementName: NumberWrapperElement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

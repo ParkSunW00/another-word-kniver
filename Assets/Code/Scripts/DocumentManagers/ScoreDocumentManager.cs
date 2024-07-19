@@ -3,15 +3,10 @@ using UnityEngine.UIElements;
 
 public class ScoreDocumentManager : MonoBehaviour
 {
-	[SerializeField] UIDocument m_uiDocument;
+	[SerializeField] DocumentNumber m_documentNumber;
 
-	Label m_scoreLabel;
-
-	private void Awake()
-	{
-		m_scoreLabel = m_uiDocument.rootVisualElement.Query<Label>("ScoreLabel");
-	}
 	private void Start()
 	{
+		ScoreManager.ScoreChangedEvent.AddListener(m_documentNumber.ResetNumberElements);
 	}
 }
