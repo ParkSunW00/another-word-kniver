@@ -9,9 +9,9 @@ public class MainMenuManager : MonoBehaviour
 {
     //버튼
     public Button StartBtn;
-    public Button OptionBtn;
     public Button BestRecBtn;
     public Button SkillBtn;
+    public Button OptionBtn;
 
     //OptionPanelObject
     public GameObject OptionPanel;
@@ -19,8 +19,7 @@ public class MainMenuManager : MonoBehaviour
     public Button SoundOptionBtn;
     public Button ExitBtn;
 
-
-
+   
     TitleManager Titlemng;
 
     void Start()
@@ -35,12 +34,12 @@ public class MainMenuManager : MonoBehaviour
             SkillBtn.onClick.AddListener(SkillBtnClick);
         }
 
-
-
         if (OptionBtn != null)
         {
             OptionBtn.onClick.AddListener(OptionBtnClick);
         }
+
+        //OptionPanel
 
         if (ExitBtn != null)
         {
@@ -53,16 +52,22 @@ public class MainMenuManager : MonoBehaviour
         }
     }//--void Start()
 
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) && Input.GetKeyDown(KeyCode.Space))
         {
             StartBtnClick();
         }
 
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             SkillBtnClick();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OptionPanel.SetActive(false);
         }
     }
 
@@ -72,14 +77,19 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("InGame");
     }
 
-    private void OptionBtnClick()
-    {
-        OptionPanel.SetActive(true);
-    }
+
 
     private void SkillBtnClick()
     {
         SceneManager.LoadScene("InGame");
+    }
+
+
+    private void OptionBtnClick()
+    {
+        TogglePanel();
+
+
     }
 
     private void ExitBtnClick()
@@ -102,6 +112,12 @@ public class MainMenuManager : MonoBehaviour
 #else
         Application.Quit(); // 어플리케이션 종료
 #endif
+    }
+
+    private void TogglePanel()
+    {
+        OptionPanel.SetActive(true);
+        
     }
 
 }
