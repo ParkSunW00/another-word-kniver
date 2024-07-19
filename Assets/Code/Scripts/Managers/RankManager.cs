@@ -17,8 +17,11 @@ public class RankManager : MonoBehaviour
         if(PlayerPrefs.HasKey("bestScore"))
         {
             bestScore = PlayerPrefs.GetInt("bestScore");
-            MaxRankingText.text = "최고 기록: " + bestScore.ToString();
+            
         }
+        // 최고 기록 텍스트 업데이트
+        UpdateMaxRankingText(bestScore);
+
         if (BackBtn != null)
         {
             BackBtn.onClick.AddListener(BackBtnClick);
@@ -36,5 +39,13 @@ public class RankManager : MonoBehaviour
     private void BackBtnClick()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void UpdateMaxRankingText(int bestScore)
+    {
+        if (MaxRankingText != null)
+        {
+            MaxRankingText.text = bestScore.ToString();
+        }
     }
 }
