@@ -11,6 +11,7 @@ public class InGameManager : MonoBehaviour
 	private void Start()
 	{
 		TimeLimitManager.TimeLimitEndedEvent.AddListener(m_comboManager.ResetCombo);
+		TimeLimitManager.TimeLimitEndedEvent.AddListener(HandleTimeLimitEnd);
 		StartCoroutine(TargetSpawnWIthDelay());
 	}
 	private void Update()
@@ -18,19 +19,27 @@ public class InGameManager : MonoBehaviour
 		if (!m_targetManager.CheckSpawned()) return;
 		if (!m_targetManager.CheckCurrectKeyDown()) return;
 
-		GameObject hitedTargetGameObject = m_targetManager.Destory();
-		Target hitedTarget = hitedTargetGameObject.GetComponent<Target>();
+		GameObject targetGameObject = m_targetManager.Destory();
+		Target target = targetGameObject.GetComponent<Target>();
 		if (m_targetManager.CheckCorrectDirectionKeyDown())
 		{
-			m_scoreManager.AddScore(hitedTarget.TargetData.Score);
-			if (hitedTarget.TargetData.Score > 0) m_comboManager.AddCombo();
+			m_scoreManager.AddScore(target.TargetData.Score);
+			if (target.TargetData.Score > 0) m_comboManager.AddCombo();
 			else m_comboManager.ResetCombo();
-		} else
+		}
+		else
 		{
-			if (hitedTarget.TargetData.Score <= 0) m_comboManager.AddCombo();
+			if (target.TargetData.Score <= 0) m_comboManager.AddCombo();
 			else m_comboManager.ResetCombo();
 		}
 
+		m_targetManager.Spawn();
+		m_timeLimitManager.ResetTimeLimit();
+	}
+	private void HandleTimeLimitEnd()
+	{
+		m_comboManager.ResetCombo();
+		m_targetManager.Destory();
 		m_targetManager.Spawn();
 		m_timeLimitManager.ResetTimeLimit();
 	}
@@ -39,5 +48,6 @@ public class InGameManager : MonoBehaviour
 	{
 		yield return new WaitForSeconds(3);
 		m_targetManager.Spawn();
+		m_timeLimitManager.ResetTimeLimit();
 	}
 }
