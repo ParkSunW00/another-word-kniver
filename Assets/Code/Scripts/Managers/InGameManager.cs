@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class InGameManager : MonoBehaviour
@@ -8,13 +9,14 @@ public class InGameManager : MonoBehaviour
 	const int DAMAGE_ON_WRONG = 15;
 	const int DAMAGE_PER_SECONDS = 2;
 	const int REDUCE_LIMIT_TIME_COUNT = 10;
-	const int START_DELAY_SECONDS = 3;
+	const int START_DELAY_SECONDS = 4;
 	const float REDUCE_LIMIT_TIME_SECONDS = 0.2f;
 
 	[SerializeField] ComboManager m_comboManager;
 	[SerializeField] HealthManager m_healthManager;
 	[SerializeField] TargetManager m_targetManager;
 	[SerializeField] TimeLimitManager m_timeLimitManager;
+	[SerializeField] TrafficManager m_trafficManager;
 	[SerializeField] ScoreManager m_scoreManager;
 
 	private void Start()
@@ -22,6 +24,7 @@ public class InGameManager : MonoBehaviour
 		HealthManager.HealthDeathEvent.AddListener(HandleDeath);
 		TimeLimitManager.TimeLimitEndedEvent.AddListener(ResetComboAndDamageHealth);
 		TimeLimitManager.TimeLimitEndedEvent.AddListener(HandleTimeLimitEnd);
+		StartCoroutine(m_trafficManager.StartAnimation());
 		StartCoroutine(TargetSpawnWIthDelay());
 	}
 	private void Update()
@@ -67,6 +70,7 @@ public class InGameManager : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("bestScore", m_scoreManager.Score);
 		}
+		SceneManager.LoadScene("Rank");
 	}
 	private void HandleTimeLimitEnd()
 	{

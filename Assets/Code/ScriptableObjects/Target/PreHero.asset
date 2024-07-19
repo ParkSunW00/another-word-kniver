@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a55f5f177229bdf4abe56c2cb06cb46f, type: 3}
   m_Name: PreHero
   m_EditorClassIdentifier: 
-  score: 1
+  m_score: 1
