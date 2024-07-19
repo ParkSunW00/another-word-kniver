@@ -18,7 +18,7 @@ public class TitleManager : MonoBehaviour
             // 게임 시작 상태로 변경
             isStarted = true;
             // MainMenu 로드
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("ChatScene");
         }
     }
 }

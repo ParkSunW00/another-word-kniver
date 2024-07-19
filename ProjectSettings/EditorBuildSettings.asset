@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleMenu.unity
     guid: 4cc651ae0aed4fe438ddcb0dd2ce1076
   - enabled: 1
+    path: Assets/Scenes/ChatScene.unity
+    guid: afde582f3da01b740a917414c9e40182
+  - enabled: 1
     path: Assets/Scenes/Option.unity
     guid: 0069eb9d6af89164cb334f5f75239a30
   - enabled: 1
