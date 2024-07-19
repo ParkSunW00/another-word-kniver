@@ -7,10 +7,7 @@ public class ScoreManager : MonoBehaviour
 	static public UnityEvent<int> ScoreChangedEvent { get { return m_scoreChangedEvent; } }
 
 	private int score = 0;
-	public int Score
-	{
-		get { return score; }
-	}
+	public int Score { get { return score; } }
 
 	private void Awake()
 	{
