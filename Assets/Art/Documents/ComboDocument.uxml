@@ -2,7 +2,7 @@
     <ui:VisualElement style="flex-grow: 1; position: absolute; top: 43%; left: 6%;">
         <ui:VisualElement name="ComboElement" style="width: 270px; max-width: 270px; min-width: 270px; height: 75px; max-height: 75px; min-height: 75px; background-image: url(&quot;project://database/Assets/Art/Sprites/Play_Combo.png?fileID=2800000&amp;guid=cd0e63df79343654b8cd72f48583332b&amp;type=3#Play_Combo&quot;);" />
         <ui:VisualElement name="NumberWrapperElement" style="flex-grow: 1; align-self: center; position: absolute; top: -55px; flex-wrap: nowrap; flex-direction: row;">
-            <ui:VisualElement name="NumberElement0" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprites/Number_0.png?fileID=2800000&amp;guid=1ad68f0a3d217b3478b498435e0177e8&amp;type=3#Number_0&quot;); width: 52px; max-width: 52px; min-width: 52px; min-height: 76px; max-height: 76px; height: 76px; position: relative; margin-right: -12px;" />
+            <ui:VisualElement name="NumberElement0" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Sprites/Num_0.png?fileID=2800000&amp;guid=e7cd99c433bab974f908fd3bd6aafa6f&amp;type=3#Num_0&quot;); width: 52px; max-width: 52px; min-width: 52px; min-height: 76px; max-height: 76px; height: 76px; position: relative; margin-right: -12px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
