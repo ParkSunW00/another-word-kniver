@@ -39,6 +39,11 @@ public class MainMenuManager : MonoBehaviour
             OptionBtn.onClick.AddListener(OptionBtnClick);
         }
 
+        if (BestRecBtn != null)
+        {
+            BestRecBtn.onClick.AddListener(BestRecBtnClick);
+        }
+
         //OptionPanel
 
         if (ExitBtn != null)
@@ -77,11 +82,14 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("InGame");
     }
 
-
+    private void BestRecBtnClick()
+    {
+        SceneManager.LoadScene("Rank");
+    }
 
     private void SkillBtnClick()
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("Rank");
     }
 
 
