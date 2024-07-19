@@ -5,18 +5,19 @@ using UnityEngine.UI;
 
 public class OptionManager : MonoBehaviour
 {
-    // ½½¶óÀÌ´õ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
     public Slider volumeSlider;
 
     // Start is called before the first frame update
     void Start()
     {
-        // ½½¶óÀÌ´õ¸¦ ÃÖ´ë°ªÀ¸·Î ¼³Á¤
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Ö´ë°ªï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (volumeSlider != null)
         {
             volumeSlider.value = volumeSlider.maxValue;
         }
     }
+
 
 
 }

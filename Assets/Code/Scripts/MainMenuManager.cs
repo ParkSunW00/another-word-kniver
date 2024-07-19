@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    //¹öÆ°
+    //ë²„íŠ¼
     public Button StartBtn;
     public Button OptionBtn;
     public Button BestRecBtn;
@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
 
     public Button SoundOptionBtn;
     public Button ExitBtn;
+
 
 
     TitleManager Titlemng;
@@ -33,6 +34,7 @@ public class MainMenuManager : MonoBehaviour
         {
             SkillBtn.onClick.AddListener(SkillBtnClick);
         }
+
 
 
         if (OptionBtn != null)
@@ -91,13 +93,14 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene("Option");
     }
 
+
     public void ExitGame()
     {
-        Debug.Log("Á¾·á");
+        Debug.Log("ì¢…ë£Œ");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        Application.Quit(); // ¾îÇÃ¸®ÄÉÀÌ¼Ç Á¾·á
+        Application.Quit(); // ì–´í”Œë¦¬ì¼€ì´ì…˜ ì¢…ë£Œ
 #endif
     }
 
