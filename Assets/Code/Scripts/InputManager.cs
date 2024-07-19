@@ -7,15 +7,15 @@ public class InputManager : MonoBehaviour
 	static UnityEvent upKeyDownEvent;
 	static UnityEvent leftKeyDownEvent;
 
-	public UnityEvent RightKeyDownEvent
+	static public UnityEvent RightKeyDownEvent
 	{
 		get { return rightKeyDownEvent; }
 	}
-	public UnityEvent UpKeyDownEvent
+	static public UnityEvent UpKeyDownEvent
 	{
 		get { return upKeyDownEvent; }
 	}
-	public UnityEvent LeftKeyDownEvent
+	static public UnityEvent LeftKeyDownEvent
 	{
 		get { return leftKeyDownEvent; }
 	}
