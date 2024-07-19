@@ -509,7 +509,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_targetPrefabs:
   - {fileID: 8490121238123854312, guid: f71cceca51fd02142bfd3f800f3e07cc, type: 3}
+  - {fileID: 8490121238123854312, guid: f71cceca51fd02142bfd3f800f3e07cc, type: 3}
+  - {fileID: 8490121238123854312, guid: f71cceca51fd02142bfd3f800f3e07cc, type: 3}
+  - {fileID: 8490121238123854312, guid: f71cceca51fd02142bfd3f800f3e07cc, type: 3}
   - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
+  - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
+  - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
+  - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
+  - {fileID: 9134129858426382633, guid: 207de65244964ef499f6f61c6436eaaa, type: 3}
+  - {fileID: 5199034706433100568, guid: 7911afe9abc3e7449b7e62c3c0cc8a67, type: 3}
   m_rightSpawnPosition: {x: 3, y: 0}
   m_middleSpawnPosition: {x: 0, y: 0}
   m_leftSpawnPosition: {x: -3, y: 0}
