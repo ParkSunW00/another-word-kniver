@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGMManager : MonoBehaviour
 {
-    private static BGMManager instance = null;
+    public static BGMManager instance = null;
     private AudioSource audioSource;
 
     void Awake()
