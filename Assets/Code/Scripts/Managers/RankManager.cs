@@ -1,29 +1,27 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine;
+using System;
 
-public class OptionManager : MonoBehaviour
+public class RankManager : MonoBehaviour
 {
-    public Slider volumeSlider;
     public Button BackBtn;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject bgm = GameObject.Find("BgmManager");
-
-        if (volumeSlider != null)
-        {
-            volumeSlider.value = volumeSlider.value;
-        }
-
         if (BackBtn != null)
         {
             BackBtn.onClick.AddListener(BackBtnClick);
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     private void BackBtnClick()
