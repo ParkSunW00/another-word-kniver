@@ -1094,6 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168554734}
   - component: {fileID: 1168554733}
+  - component: {fileID: 1168554736}
   - component: {fileID: 1168554735}
   m_Layer: 5
   m_Name: ComboDocument
@@ -1145,6 +1146,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904210e5de42a8a4e950f40b78f9ed09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_documentNumber: {fileID: 1168554736}
+  m_uiDocument: {fileID: 1168554733}
+--- !u!114 &1168554736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168554732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c2146f7548491746a01adbf2d7953f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_uiDocument: {fileID: 1168554733}
   m_numberImages:
   - {fileID: 2800000, guid: e7cd99c433bab974f908fd3bd6aafa6f, type: 3}
   - {fileID: 2800000, guid: 0373fa5e3a8c7e3439ca0ef3a8dbd522, type: 3}
@@ -1156,7 +1172,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 2406d8b3dd2f65847a3ee1a9c7ff8c75, type: 3}
   - {fileID: 2800000, guid: 0aeefc8437792de44a4ebb810bc59cdf, type: 3}
   - {fileID: 2800000, guid: 98804d99118cea743a24aa362f8c3905, type: 3}
-  m_uiDocument: {fileID: 1168554733}
+  m_numberWrapperElementName: NumberWrapperElement
 --- !u!1 &1340132359
 GameObject:
   m_ObjectHideFlags: 0
