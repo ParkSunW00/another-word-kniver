@@ -3,24 +3,29 @@ using UnityEngine.Events;
 
 public class InputManager : MonoBehaviour
 {
-	static InputManager instance;
-	public static InputManager Instance
-	{
-		get { return instance; }
-	}
+	static UnityEvent rightKeyDownEvent;
+	static UnityEvent upKeyDownEvent;
+	static UnityEvent leftKeyDownEvent;
 
-	UnityEvent rightKeyDownEvent = new();
-	UnityEvent upKeyDownEvent = new();
-	UnityEvent leftKeyDownEvent = new();
+	public UnityEvent RightKeyDownEvent
+	{
+		get { return rightKeyDownEvent; }
+	}
+	public UnityEvent UpKeyDownEvent
+	{
+		get { return upKeyDownEvent; }
+	}
+	public UnityEvent LeftKeyDownEvent
+	{
+		get { return leftKeyDownEvent; }
+	}
 
 	private void Awake()
 	{
-		if (instance == null)
-		{
-			instance = this;
-		}
+		rightKeyDownEvent = new UnityEvent();
+		upKeyDownEvent = new UnityEvent();
+		leftKeyDownEvent = new UnityEvent();
 	}
-
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.RightArrow))
