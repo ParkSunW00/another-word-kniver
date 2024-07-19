@@ -10,6 +10,7 @@ public class InGameManager : MonoBehaviour
 
 	private void Start()
 	{
+		TimeLimitManager.TimeLimitEndedEvent.AddListener(m_comboManager.ResetCombo);
 		StartCoroutine(TargetSpawnWIthDelay());
 	}
 	private void Update()

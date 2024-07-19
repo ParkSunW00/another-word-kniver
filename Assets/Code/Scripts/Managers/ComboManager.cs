@@ -13,10 +13,6 @@ public class ComboManager : MonoBehaviour
 	{
 		m_comboChangedEvent = new UnityEvent<int>();
 	}
-	private void Start()
-	{
-		TimeLimitManager.TimeLimitEndedEvent.AddListener(ResetCombo);
-	}
 	public void AddCombo()
 	{
 		++combo;
