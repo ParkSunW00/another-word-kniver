@@ -5,8 +5,11 @@ using UnityEngine;
 public class InGameManager : MonoBehaviour
 {
 	const int BASE_TIME_LIMIT = 2;
+	const int DAMAGE_ON_WRONG = 15;
 	const int DAMAGE_PER_SECONDS = 2;
+	const int REDUCE_LIMIT_TIME_COUNT = 10;
 	const int START_DELAY_SECONDS = 3;
+	const float REDUCE_LIMIT_TIME_SECONDS = 0.2f;
 
 	[SerializeField] ComboManager m_comboManager;
 	[SerializeField] HealthManager m_healthManager;
@@ -50,11 +53,11 @@ public class InGameManager : MonoBehaviour
 	private void ResetComboAndDamageHealth()
 	{
 		m_comboManager.ResetCombo();
-		m_healthManager.AddHealth(-10);
+		m_healthManager.AddHealth(-DAMAGE_ON_WRONG);
 	}
 	private void ResetLimitTime()
 	{
-		float reduceLimit = Mathf.Floor(m_comboManager.Combo / 10) * 0.1f;
+		float reduceLimit = Mathf.Floor(m_comboManager.Combo / REDUCE_LIMIT_TIME_COUNT) * REDUCE_LIMIT_TIME_SECONDS;
 		m_timeLimitManager.ResetTimeLimit(BASE_TIME_LIMIT - reduceLimit);
 	}
 	private void HandleTimeLimitEnd()
