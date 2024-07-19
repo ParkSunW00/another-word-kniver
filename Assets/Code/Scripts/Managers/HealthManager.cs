@@ -41,6 +41,11 @@ public class HealthManager : MonoBehaviour
 	{
 		m_health += value;
 		if (m_health > HEALTH_MAX) m_health = HEALTH_MAX;
+		if (m_health <= 0)
+		{
+			m_health = 0;
+			m_healthDeathEvent.Invoke();
+		}
 		m_healthChangedEvent.Invoke(m_health);
 	}
 }
