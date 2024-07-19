@@ -24,6 +24,7 @@ public class TargetManager : MonoBehaviour
 	{
 		m_scoreManager.AddScore(target.TargetData.Score);
 		Destroy(target.gameObject);
+		Spawn();
 	}
 	public void Spawn()
 	{
