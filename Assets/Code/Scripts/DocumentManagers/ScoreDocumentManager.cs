@@ -13,6 +13,5 @@ public class ScoreDocumentManager : MonoBehaviour
 	}
 	private void Start()
 	{
-		ScoreManager.ScoreChangedEvent.AddListener((score) => { m_scoreLabel.text = "Score: " + score; });
 	}
 }

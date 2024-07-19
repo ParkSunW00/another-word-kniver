@@ -9,7 +9,6 @@ public class ComboDocumentManager : MonoBehaviour
 	[SerializeField] UIDocument m_uiDocument;
 
 	VisualElement m_numberWrapperElement;
-	List<VisualElement> m_numberElements = new();
 
 	private void Awake()
 	{
@@ -30,7 +29,6 @@ public class ComboDocumentManager : MonoBehaviour
 	private VisualElement CreateChildNumberElement(int imageIndex)
 	{
 		VisualElement element = new();
-		element.name = CreateChildNumberElementName();
 		element.style.backgroundImage = m_numberImages[imageIndex];
 		element.style.width = 52;
 		element.style.maxWidth = 52;
@@ -41,11 +39,5 @@ public class ComboDocumentManager : MonoBehaviour
 		element.style.marginRight = -12;
 		m_numberWrapperElement.Add(element);
 		return element;
-	}
-	private string CreateChildNumberElementName()
-	{
-		string name = "NumberElement0";
-		m_numberElements.ForEach((_) => { name += "0"; });
-		return name;
 	}
 }
