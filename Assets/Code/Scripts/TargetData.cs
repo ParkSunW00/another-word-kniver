@@ -4,8 +4,5 @@ using UnityEngine;
 public class TargetData : ScriptableObject
 {
 	[SerializeField] private int score = 0;
-	public int Score
-	{
-		get { return score; }
-	}
+	public int Score { get { return score; } }
 }

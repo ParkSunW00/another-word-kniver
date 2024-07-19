@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
-	static UnityEvent scoreChangedEvent = new();
+	static UnityEvent<int> m_scoreChangedEvent;
+	static public UnityEvent<int> ScoreChangedEvent { get { return m_scoreChangedEvent; } }
 
 	private int score = 0;
 	public int Score
@@ -11,9 +12,13 @@ public class ScoreManager : MonoBehaviour
 		get { return score; }
 	}
 
+	private void Awake()
+	{
+		m_scoreChangedEvent = new UnityEvent<int>();
+	}
 	public void AddScore(int value)
 	{
 		score += value;
-		scoreChangedEvent.Invoke();
+		m_scoreChangedEvent.Invoke(score);
 	}
 }
