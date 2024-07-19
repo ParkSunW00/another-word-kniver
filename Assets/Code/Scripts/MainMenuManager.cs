@@ -19,8 +19,6 @@ public class MainMenuManager : MonoBehaviour
     public Button SoundOptionBtn;
     public Button ExitBtn;
 
-   
-    TitleManager Titlemng;
 
     void Start()
     {
@@ -102,7 +100,6 @@ public class MainMenuManager : MonoBehaviour
 
     private void ExitBtnClick()
     {
-        Titlemng.isStarted = false;
         ExitGame();
     }
 

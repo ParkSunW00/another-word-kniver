@@ -8,15 +8,24 @@ using System;
 public class RankManager : MonoBehaviour
 {
     public Button BackBtn;
+    public Text MaxRankingText;
 
     // Start is called before the first frame update
     void Start()
     {
+        int bestScore = 0;
+        if(PlayerPrefs.HasKey("bestScore"))
+        {
+            bestScore = PlayerPrefs.GetInt("bestScore");
+            MaxRankingText.text = "최고 기록: " + bestScore.ToString();
+        }
         if (BackBtn != null)
         {
             BackBtn.onClick.AddListener(BackBtnClick);
         }
     }
+
+
 
     // Update is called once per frame
     void Update()
