@@ -20,7 +20,7 @@ UnityVersion: **Unity 2022.3.33f**
 ---
 
 ## 시연영상 
-https://www.youtube.com/watch?v=D6Yyujfg0LE
+[![Video Label](http://img.youtube.com/vi/'D6Yyujfg0LE'/0.jpg)](https://youtu.be/'D6Yyujfg0LE')
 
 
 
